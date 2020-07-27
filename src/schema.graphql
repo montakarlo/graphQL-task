@@ -1,0 +1,33 @@
+type Query {
+  info: String!
+  messages(filter: String, skip: Int, first: Int orderBy: MessageOrderByInput): Messages!
+}
+
+enum MessageOrderByInput{
+  name_DESC
+  name_ASC
+  createdAt_DESC
+  createdAt_ASC
+}
+
+type Mutation{
+  postMessage(name: String!, text: String!, likes: Float, dislikes: Float, createdAt: String): Message!
+}
+
+type Subscription {
+  newMessage: Message
+}
+
+type Messages{
+  messageList: [Message!]!
+  count: Int!
+}
+
+type Message {
+  id: ID!
+  name: String!
+  text: String!
+  likes: Float
+  dislikes: Float
+  createdAt: String!
+}

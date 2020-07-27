@@ -1,0 +1,10 @@
+#endpoint: ''
+endpoint: https://eu1.prisma.sh/dmytro-potapenko-ee20a5/chat/dev
+
+datamodel: datamodel.graphql
+generate:
+  - generator: javascript-client
+    output: ../src/generated/prisma-client
+hooks:
+  post-deploy:
+    - prisma generate

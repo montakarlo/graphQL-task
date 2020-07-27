@@ -1,0 +1,23 @@
+{
+  "name": "nineth",
+  "version": "1.0.0",
+  "description": "app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/server.js",
+    "server": "nodemon ./src/server.js"
+  },
+  "author": "Dmytro Potapenko",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "graphql": "^15.3.0",
+    "graphql-yoga": "^1.18.3",
+    "prisma-client-lib": "^1.34.10"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
