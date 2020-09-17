@@ -34,7 +34,9 @@ export default () => {
         if (loading) return <ReactBootStrap.Spinner animation="border" variant="light"/>
         if (error) return <div style={{color: 'white'}}>Error:(</div>
         _subscribeToNewMessages(subscribeToMore);
-        const {messages: {messageList}} = data
+        const {messages: {messageList}} = data;
+        console.log(messageList);
+
         return(
           <div className="chatBody">
             <div className="chatBody__container" id="chatBody__container">
@@ -43,7 +45,7 @@ export default () => {
 
                     <MessageItem 
                     text = {message.text}
-                    date = {new Date(message.createdAt).toString().slice(16,21)}
+                    // date = {new Date(message.createdAt).toString().slice(16,21)}
                     key = {index}
                     messageId = {message.id}
 
